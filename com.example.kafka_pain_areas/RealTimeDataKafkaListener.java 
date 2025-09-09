@@ -1,0 +1,15 @@
+package com.example.kafka_pain_areas;
+
+import org.springframework.kafka.annotation.KafkaListener;
+import org.springframework.stereotype.Service;
+
+@Service
+public class RealTimeDataKafkaListener {
+
+    @KafkaListener(topics = "${spring.kafka.consumer.topic.realtime}", groupId = "${spring.kafka.consumer.group-id.realtime}")
+    public void listenRealTimeData(String message) {
+        // Process real-time data
+        System.out.println("Received real-time data: " + message);
+        // ... existing code ...
+    }
+}
